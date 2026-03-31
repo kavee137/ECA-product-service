@@ -2,7 +2,7 @@ spring:
   application:
     name: product-service
   config:
-    import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
+    import: "configserver:"
 
 firestore:
   project-id: ${FIRESTORE_PROJECT_ID:kaveesha-cloud}
@@ -16,3 +16,7 @@ management:
     web:
       exposure:
         include: health,info
+
+cloud:
+  config:
+    uri: http://config.platform:8888
